@@ -72,4 +72,5 @@ Exec=${SCRIPT_DIR}/webui.sh
 EOF
 fi
 
+cd $SCRIPT_DIR
 "$PYTHON_CMD" bark_webui.py
