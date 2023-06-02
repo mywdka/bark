@@ -44,10 +44,7 @@ printf "\n%s\n" "${delimiter}"
 printf "Launching bark_webui.py..."
 printf "\n%s\n" "${delimiter}"
 
-"$PYTHON_CMD" bark_webui.py
-
 # Creates desktop icon for the user
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 if [ ! -e "~/.local/share/applications/bark.desktop" ]; then
     cat > ~/.local/share/applications/bark.desktop << EOF
 [Desktop Entry]
@@ -74,3 +71,5 @@ Icon=${SCRIPT_DIR}/app-icon.png
 Exec=${SCRIPT_DIR}/webui.sh
 EOF
 fi
+
+"$PYTHON_CMD" bark_webui.py
